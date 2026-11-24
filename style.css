@@ -302,7 +302,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--mocha);outline-offs
 .other-open .arrow{width:34px;height:34px;font-size:15px}
 .other-open:hover{color:var(--tan)}
 .other-open.off{color:#8f7a68}
-@media (max-width:600px){.other.has-thumb{grid-template-columns:110px minmax(0,1fr)}}
+@media (max-width:600px){
+  .other.has-thumb{grid-template-columns:1fr;gap:16px}
+  .other.has-thumb .other-thumb{aspect-ratio:16/10}
+}
 @media (max-width:600px){.hero-name{font-size:clamp(44px,15.5vw,72px)}}
 
 /* SKILLS */
@@ -352,3 +355,4 @@ button.btn-line{background:transparent;color:var(--espresso)}button.btn-line:hov
 .cert>*:not(.cert-star){position:relative;z-index:1}
 .cert-icon.has-badge{background:#fff;border:1px solid var(--line);overflow:hidden;border-radius:12px}.cert-icon.has-badge img{width:100%;height:100%;object-fit:contain;padding:5px}
 .cert-top{gap:12px}
+.other-thumb{display:block;width:100%;align-self:start}.other-thumb img{display:block}
