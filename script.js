@@ -17,7 +17,7 @@
   $("resumeMail").href = mailto;
   const openModal = (e) => { e.preventDefault(); modal.hidden = false; document.body.style.overflow = "hidden"; $("resumeClose").focus(); };
   const closeModal = () => { modal.hidden = true; document.body.style.overflow = ""; };
-  document.querySelectorAll(".js-resume").forEach((a) => { a.removeAttribute("target"); a.addEventListener("click", openModal); });
+  document.querySelectorAll(".js-resume").forEach((a) => a.addEventListener("click", openModal));
   $("resumeClose").addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
