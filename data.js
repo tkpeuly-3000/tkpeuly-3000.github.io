@@ -284,12 +284,30 @@ const SKILLS = [
    ★ NEW: you can also just upload certificate files to GitHub, see HOW-TO-ADD.md */
 const CERTIFICATIONS = [
   {
+    name: "SOLIDWORKS Design Associate (CSWA)",
+    issuer: "Dassault Systèmes",
+    date: "Nov 2026",
+    credentialId: "C-9UDLM8PWCH",
+    file: "",
+    link: "https://www.linkedin.com/in/tabassum-kamal-peuly-841267421/details/certifications/",
+    featured: true,
+  },
+  {
+    name: "Google Project Management Professional Certificate",
+    issuer: "Google",
+    date: "Nov 2026",
+    credentialId: "10920R48G699",
+    file: "",
+    link: "https://www.linkedin.com/in/tabassum-kamal-peuly-841267421/details/certifications/",
+    featured: true,
+  },
+  {
     name: "Student Success Mentor Training",
     issuer: "Mentor Collective",
     date: "Oct 2026",
-    credentialId: "",
+    credentialId: "izej62swxn",
     file: "",
-    link: "",
+    link: "https://www.linkedin.com/in/tabassum-kamal-peuly-841267421/details/certifications/",
     featured: true,
   },
   {
@@ -299,16 +317,7 @@ const CERTIFICATIONS = [
     credentialId: "",
     file: "",
     link: "",
-    featured: true,
-  },
-  {
-    name: "Foundations of Project Management",
-    issuer: "Google",
-    date: "Nov 2026",
-    credentialId: "",
-    file: "",
-    link: "",
-    featured: true,
+    featured: false,
   },
   {
     name: "Texas Cybersecurity Awareness Training",

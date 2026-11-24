@@ -349,3 +349,4 @@ button.btn-line{background:transparent;color:var(--espresso)}button.btn-line:hov
 .modal-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
 .modal-btns .btn{margin:0}
 .modal-copy{margin-top:14px;background:none;border:0;font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mocha);cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:40px}
+.cert>*:not(.cert-star){position:relative;z-index:1}
