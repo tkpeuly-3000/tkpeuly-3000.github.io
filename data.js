@@ -123,10 +123,10 @@ const OTHER_PROJECTS = [
   },
   {
     title: "Degree Flow",
-    description: "Upload a degree flowchart, get a draggable semester plan with prerequisites.",
-    tags: [],
+    description: "Upload your degree flowchart and get a draggable semester by semester plan with prerequisite lines, balancing hard and easy classes each term.",
+    tags: ["Web app", "JavaScript", "Netlify"],
     image: "",
-    link: "",
+    link: "https://degree-flow.netlify.app/",
   },
 ];
 
