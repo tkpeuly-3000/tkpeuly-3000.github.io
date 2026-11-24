@@ -331,15 +331,17 @@
   $("heroGear").innerHTML = `<svg viewBox="0 0 200 200" style="overflow:visible">
     <g id="gearBig"><path d="${makeGear(100, 100, 26, 98, 88, 6, 72, 34, 15)}" fill-rule="evenodd"/>${rimLine}</g>
   </svg>`;
-  const gBig = $("gearBig");
+  const gearSvg = $("heroGear").firstElementChild;
   const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let angle = 0, lastY = window.scrollY, lastT = performance.now();
-  const setGears = () => gBig.setAttribute("transform", `rotate(${angle.toFixed(3)} 100 100)`);
+  /* rotate the whole picture on the graphics card, and ease scroll pushes in smoothly */
+  let angle = 0, boost = 0, lastY = window.scrollY, lastT = performance.now();
+  const setGears = () => { gearSvg.style.transform = `rotate(${angle.toFixed(2)}deg)`; };
   setGears();
+  window.addEventListener("scroll", () => { boost += (window.scrollY - lastY) * 0.25; lastY = window.scrollY; }, { passive: true });
   const spinGear = (t) => {
     const dt = Math.min(t - lastT, 50); lastT = t;
-    const dy = window.scrollY - lastY; lastY = window.scrollY;
-    angle += dt * 0.006 + dy * 0.25;
+    const push = boost * 0.12; boost -= push;
+    angle = (angle + dt * 0.006 + push) % 360;
     setGears();
     requestAnimationFrame(spinGear);
   };
