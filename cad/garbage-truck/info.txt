@@ -1,0 +1,5 @@
+title: Garbage Truck
+type: Assembly
+software: SolidWorks
+featured: yes
+description: Full garbage truck model with a compactor body, side loading arm, cab and six wheels, plus drawing sheets with standard and isometric views.

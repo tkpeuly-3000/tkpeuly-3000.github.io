@@ -1,0 +1,5 @@
+title: Custom Truck Tire
+type: Part
+software: SolidWorks
+featured: yes
+description: Treaded tire with a spoked rim, built from extrudes, a loft, a circular pattern and wrapped lettering with my name.

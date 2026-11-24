@@ -1,0 +1,5 @@
+title: Link Chain Mechanism
+type: Assembly
+software: SolidWorks
+featured: no
+description: Slotted links pinned between two mounting brackets with concentric and coincident mates, set up for motion studies.

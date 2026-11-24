@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabassum Peuly · Portfolio</title>
+<meta name="description" content="Tabassum Peuly, Mechanical Engineering student at Texas Tech University focused on robotics and medical bionics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#home" class="logo"><span class="logo-gear"></span>T.PEULY<span class="logo-dim">.me</span></a>
+  <nav class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#cad">CAD</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<aside class="gears" id="gears" aria-label="Section tracker"></aside>
+
+<main>
+  <!-- HERO -->
+  <section class="hero band" id="home" data-name="Home">
+    <div class="hero-text">
+      <p class="eyebrow" id="tagline"></p>
+      <h1 class="hero-name"><span id="firstName"></span><span id="lastName"></span></h1>
+      <p class="hero-sub"><span id="subtitle"></span><br><span id="grad" class="grad"></span></p>
+      <p class="hero-intro" id="intro"></p>
+      <div class="btns">
+        <a href="#projects" class="btn btn-solid">View projects</a>
+        <a class="btn btn-line js-resume" target="_blank" rel="noopener" title="Message me on LinkedIn for my resume">Request resume</a>
+        <a href="#contact" class="btn btn-line">Contact</a>
+        <a id="heroLinkedin" class="btn btn-line btn-in" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn<span class="arr">↗</span></a>
+      </div>
+    </div>
+
+    <figure class="drawing">
+      <div class="disc" id="heroGear" aria-hidden="true"></div>
+      <div class="sheet">
+        <span class="dim dim-top"><i></i><b>⌀ 800</b><i></i></span>
+        <span class="dim dim-side"><i></i><b>800</b><i></i></span>
+        <span class="cross c1"></span><span class="cross c2"></span>
+        <img id="photo" alt="Portrait of Tabassum Peuly">
+        <div class="titleblock">
+          <span><small>Drawn by</small>T. PEULY</span>
+          <span><small>Dept</small>ME · TTU</span>
+          <span><small>Rev</small>A</span>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="band" id="about" data-name="About">
+    <p class="eyebrow num">01 · About</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="big" id="aboutHeading"></h2>
+        <div id="aboutText" class="prose"></div>
+        <h3 class="mini">Focus areas</h3>
+        <ul class="focus" id="focus"></ul>
+      </div>
+      <aside class="facts card" id="facts"></aside>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="band band-dark" id="projects" data-name="Projects">
+    <p class="eyebrow num">02 · Selected projects</p>
+    <div class="spotlight" id="spotlight"></div>
+    <h2 class="big">Things I'm building</h2>
+    <div class="projects" id="projectList"></div>
+    <h3 class="mini">Other projects</h3>
+    <div class="others" id="otherList"></div>
+  </section>
+
+  <!-- CAD WORK -->
+  <section class="band" id="cad" data-name="CAD Work">
+    <p class="eyebrow num">03 · CAD work</p>
+    <div class="cad-head">
+      <h2 class="big">Designed in CAD</h2>
+      <div class="cad-filter" id="cadFilter"></div>
+    </div>
+    <div class="cad-grid" id="cadList"></div>
+    <div class="cad-more"><button class="btn btn-line" id="cadMore" hidden>Show all designs</button></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="band" id="skills" data-name="Skills">
+    <p class="eyebrow num">04 · Skills</p>
+    <h2 class="big">What I work with</h2>
+    <div class="skill-grid" id="skillList"></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="band" id="experience" data-name="Experience">
+    <p class="eyebrow num">05 · Experience</p>
+    <h2 class="big">Where I've worked and led</h2>
+    <div class="exp-grid">
+      <ol class="timeline" id="expList"></ol>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="band" id="certificates" data-name="Certificates">
+    <p class="eyebrow num">06 · Certificates</p>
+    <h2 class="big">Certified and counting</h2>
+    <div class="cert-grid" id="certList"></div>
+    <div class="cad-more"><button class="btn btn-line" id="certMore" hidden>Show more certificates</button></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band contact" id="contact" data-name="Contact">
+    <p class="eyebrow num">07 · Contact</p>
+    <h2 class="huge">Let's build<br>something <em>together</em></h2>
+    <p class="contact-sub">Open to internships, research positions and full time roles in robotics, medical bionics, automotive and infrastructure.</p>
+    <div class="btns">
+      <a id="emailBtn" class="btn btn-solid">Email me</a>
+      <a id="linkedinBtn" class="btn btn-line btn-arrow" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+      <a class="btn btn-line js-resume" target="_blank" rel="noopener" title="Message me on LinkedIn for my resume">Request resume</a>
+    </div>
+    <p class="email-text" id="emailText"></p>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">›</button>
+</div>
+
+<footer class="footer">
+  <span>T.PEULY.me</span>
+  <span class="foot-links">
+    <a id="fLinkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a id="fGithub" target="_blank" rel="noopener">GitHub</a>
+    <a id="fEmail">Email</a>
+  </span>
+  <span>© <span id="year"></span> Tabassum Peuly</span>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

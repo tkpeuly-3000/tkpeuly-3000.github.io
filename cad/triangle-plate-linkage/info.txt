@@ -1,0 +1,5 @@
+title: Triangle Plate Linkage
+type: Assembly
+software: SolidWorks
+featured: yes
+description: A triangular plate with drive, center and rocker links pinned together with pegs into a working linkage.

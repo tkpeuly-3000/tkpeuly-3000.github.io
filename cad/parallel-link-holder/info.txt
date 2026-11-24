@@ -1,0 +1,5 @@
+title: Parallel Link Holder
+type: Assembly
+software: SolidWorks
+featured: no
+description: Base holder, holder arm, side links, crosslink and bushing assembled with pegs into a parallel linkage.

@@ -1,0 +1,5 @@
+title: Lever Handle Pivot
+type: Assembly
+software: SolidWorks
+featured: no
+description: Ball knob handle on a post, joined to a box pivot and link so the lever rotates about a single pin.
