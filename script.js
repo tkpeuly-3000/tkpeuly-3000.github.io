@@ -218,7 +218,7 @@
     $("certList").innerHTML = list.map((c) => {
       const url = c.file || c.link;
       const btn = url
-        ? `<a class="cert-btn" href="${url}" target="_blank" rel="noopener">${c.file ? "View certificate" : "Verify"} ↗</a>`
+        ? `<a class="cert-btn" href="${url}" target="_blank" rel="noopener">${c.file ? "View certificate" : "Show credential"} ↗</a>`
         : `<span class="cert-btn off">Certificate on request</span>`;
       const star = c.featured ? `<span class="cert-star">★ Featured</span>` : "";
       return `<article class="cert reveal in${c.featured ? " featured" : ""}">${star}

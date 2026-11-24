@@ -289,7 +289,7 @@ const CERTIFICATIONS = [
     date: "Nov 2026",
     credentialId: "C-9UDLM8PWCH",
     file: "",
-    link: "https://www.linkedin.com/in/tabassum-kamal-peuly-841267421/details/certifications/",
+    link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9UDLM8PWCH",
     featured: true,
   },
   {
