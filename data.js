@@ -291,6 +291,7 @@ const CERTIFICATIONS = [
     credentialId: "C-9UDLM8PWCH",
     file: "",
     link: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9UDLM8PWCH",
+    badge: "certificates/badges/cswa.png",
     featured: true,
   },
   {
@@ -300,6 +301,7 @@ const CERTIFICATIONS = [
     credentialId: "10920R48G699",
     file: "",
     link: "https://www.coursera.org/account/accomplishments/specialization/10920R48G699",
+    badge: "certificates/badges/google.png",
     featured: true,
   },
   {
@@ -309,6 +311,7 @@ const CERTIFICATIONS = [
     credentialId: "izej62swxn",
     file: "",
     link: "https://learning.mentorcollective.org/certificates/izej62swxn",
+    badge: "certificates/badges/mentor-collective.png",
     featured: true,
   },
   {
