@@ -298,7 +298,7 @@ const CERTIFICATIONS = [
     date: "Nov 2026",
     credentialId: "10920R48G699",
     file: "",
-    link: "https://www.linkedin.com/in/tabassum-kamal-peuly-841267421/details/certifications/",
+    link: "https://www.coursera.org/account/accomplishments/specialization/10920R48G699",
     featured: true,
   },
   {
