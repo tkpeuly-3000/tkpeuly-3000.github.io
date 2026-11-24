@@ -296,9 +296,9 @@
   onScroll();
 
   /* ---------- HERO GEAR ---------- */
-  const makeGear = () => {
-    const c = 100, P = (r, t) => (c + r * Math.cos(t)).toFixed(2) + " " + (c + r * Math.sin(t)).toFixed(2);
-    const teeth = 26, rOut = 98, rRoot = 88, pitch = (Math.PI * 2) / teeth;
+  const makeGear = (c1, c2, teeth, rOut, rRoot, spokes, rA, rB, hub) => {
+    const P = (r, t) => (c1 + r * Math.cos(t)).toFixed(2) + " " + (c2 + r * Math.sin(t)).toFixed(2);
+    const pitch = (Math.PI * 2) / teeth;
     let d = "";
     for (let i = 0; i < teeth; i++) {
       const a = i * pitch;
@@ -306,26 +306,39 @@
       d += "A" + rRoot + " " + rRoot + " 0 0 1 " + P(rRoot, a + pitch * 0.70) + " ";
     }
     d += "Z ";
-    const spokes = 6, rA = 72, rB = 34, gap = 0.17;
+    const gap = 0.17;
     for (let k = 0; k < spokes; k++) {
       const t0 = (k / spokes) * Math.PI * 2 + gap, t1 = ((k + 1) / spokes) * Math.PI * 2 - gap;
       const g2 = gap * rA / rB * 0.55;
       d += "M" + P(rA, t0) + " A" + rA + " " + rA + " 0 0 1 " + P(rA, t1) + " L" + P(rB, t1 - g2 + gap) + " A" + rB + " " + rB + " 0 0 0 " + P(rB, t0 + g2 - gap) + " Z ";
     }
-    d += `M${c + 15} ${c} A15 15 0 1 0 ${c - 15} ${c} A15 15 0 1 0 ${c + 15} ${c} Z`;
+    d += `M${c1 + hub} ${c2} A${hub} ${hub} 0 1 0 ${c1 - hub} ${c2} A${hub} ${hub} 0 1 0 ${c1 + hub} ${c2} Z`;
     return d;
   };
+  /* big gear: 26 teeth, pitch radius 93. small gear: 10 teeth, same tooth size, meshed at the top right */
+  const ZB = 26, ZS = 10, RB = 93, RS = RB * ZS / ZB;
+  const theta = -5 * (Math.PI * 2 / ZB);
+  const sx = 100 + (RB + RS + 0.6) * Math.cos(theta), sy = 100 + (RB + RS + 0.6) * Math.sin(theta);
+  const pS = 360 / ZS, S0 = ((theta * 180 / Math.PI) + 180 - pS / 2);
   const rimLine = `<circle cx="100" cy="100" r="79" fill="none" stroke="#EDE3D3" stroke-opacity=".18" stroke-width="1.2"/>
     <circle cx="100" cy="100" r="25" fill="none" stroke="#EDE3D3" stroke-opacity=".18" stroke-width="1.2"/>`;
-  $("heroGear").innerHTML = `<svg viewBox="0 0 200 200"><path d="${makeGear()}" fill-rule="evenodd"/>${rimLine}</svg>`;
-  const gearEl = $("heroGear").firstElementChild;
+  $("heroGear").innerHTML = `<svg viewBox="0 0 200 200" style="overflow:visible">
+    <g id="gearBig"><path d="${makeGear(100, 100, ZB, 98, 88, 6, 72, 34, 15)}" fill-rule="evenodd"/>${rimLine}</g>
+    <g id="gearSmall"><path class="gear-small" d="${makeGear(sx, sy, ZS, RS + 5, RS - 5, 4, RS - 10, 10, 5)}" fill-rule="evenodd"/></g>
+  </svg>`;
+  const gBig = $("gearBig"), gSmall = $("gearSmall");
   const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let angle = 0, lastY = window.scrollY, lastT = performance.now();
+  const setGears = () => {
+    gBig.setAttribute("transform", `rotate(${angle.toFixed(3)} 100 100)`);
+    gSmall.setAttribute("transform", `rotate(${(S0 - angle * ZB / ZS).toFixed(3)} ${sx.toFixed(2)} ${sy.toFixed(2)})`);
+  };
+  setGears();
   const spinGear = (t) => {
     const dt = Math.min(t - lastT, 50); lastT = t;
     const dy = window.scrollY - lastY; lastY = window.scrollY;
     angle += dt * 0.006 + dy * 0.25;
-    gearEl.style.transform = `rotate(${angle}deg)`;
+    setGears();
     requestAnimationFrame(spinGear);
   };
   if (!still) requestAnimationFrame(spinGear);
