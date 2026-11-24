@@ -324,20 +324,27 @@
     <circle cx="100" cy="100" r="25" fill="none" stroke="#EDE3D3" stroke-opacity=".18" stroke-width="1.2"/>`;
   $("heroGear").innerHTML = `<svg viewBox="0 0 200 200" style="overflow:visible">
     <g id="gearBig"><path d="${makeGear(100, 100, ZB, 98, 88, 6, 72, 34, 15)}" fill-rule="evenodd"/>${rimLine}</g>
-    <g id="gearSmall"><path class="gear-small" d="${makeGear(sx, sy, ZS, RS + 5, RS - 5, 4, RS - 10, 10, 5)}" fill-rule="evenodd"/></g>
+    <g id="gearSmall"><path class="gear-small" d="${makeGear(0, 0, ZS, RS + 5, RS - 5, 4, RS - 10, 10, 5)}" fill-rule="evenodd"/></g>
   </svg>`;
   const gBig = $("gearBig"), gSmall = $("gearSmall");
   const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let angle = 0, lastY = window.scrollY, lastT = performance.now();
+  /* the small gear rolls around the big gear like a planet, and turns it as it goes */
+  const D = RB + RS + 0.6, th0 = theta * 180 / Math.PI;
+  let orbit = th0;
   const setGears = () => {
+    const r = orbit * Math.PI / 180;
+    const cx = 100 + D * Math.cos(r), cy = 100 + D * Math.sin(r);
+    const spin = S0 + (orbit - th0) * (1 + ZB / ZS) - angle * ZB / ZS;
     gBig.setAttribute("transform", `rotate(${angle.toFixed(3)} 100 100)`);
-    gSmall.setAttribute("transform", `rotate(${(S0 - angle * ZB / ZS).toFixed(3)} ${sx.toFixed(2)} ${sy.toFixed(2)})`);
+    gSmall.setAttribute("transform", `translate(${cx.toFixed(2)} ${cy.toFixed(2)}) rotate(${spin.toFixed(3)})`);
   };
   setGears();
   const spinGear = (t) => {
     const dt = Math.min(t - lastT, 50); lastT = t;
     const dy = window.scrollY - lastY; lastY = window.scrollY;
     angle += dt * 0.006 + dy * 0.25;
+    orbit += dt * 0.004 + dy * 0.12;
     setGears();
     requestAnimationFrame(spinGear);
   };
