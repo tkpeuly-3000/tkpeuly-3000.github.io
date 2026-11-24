@@ -123,9 +123,9 @@ const OTHER_PROJECTS = [
   },
   {
     title: "Degree Flow",
-    description: "Upload your degree flowchart and get a draggable semester by semester plan with prerequisite lines, balancing hard and easy classes each term.",
+    description: "Upload your degree flowchart (PDF, Excel or image) and get a semester plan you can drag around. Prerequisite lines keep every class in the right order, and it balances hard and easy classes each term.",
     tags: ["Web app", "JavaScript", "Netlify"],
-    image: "",
+    image: "images/degree-flow.jpg",
     link: "https://degree-flow.netlify.app/",
   },
 ];
