@@ -222,7 +222,7 @@
         : `<span class="cert-btn off">Certificate on request</span>`;
       const star = c.featured ? `<span class="cert-star">★ Featured</span>` : "";
       return `<article class="cert reveal in${c.featured ? " featured" : ""}">${star}
-        <div class="cert-top"><span class="cert-icon">${certIcon}</span><span class="cert-date">${c.date}</span></div>
+        <div class="cert-top"><span class="cert-icon${c.badge ? " has-badge" : ""}">${c.badge ? `<img src="${c.badge}" alt="${c.issuer} badge" loading="lazy">` : certIcon}</span><span class="cert-date">${c.date}</span></div>
         <h3>${c.name}</h3>
         <p class="cert-issuer">${c.issuer}</p>
         ${c.credentialId ? `<p class="cert-id">Credential ID · ${c.credentialId}</p>` : ""}

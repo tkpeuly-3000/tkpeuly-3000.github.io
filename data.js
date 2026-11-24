@@ -280,6 +280,7 @@ const SKILLS = [
    To add one: copy a block, change the words.
    file: put the certificate PDF or image in the "certificates" folder and write its path here
    link: or paste the online verification link (leave "" if you don't have one)
+   badge: optional official badge image you received, e.g. "certificates/badges/cswa.png"
    featured: true = shows on the main page with a ★ (pick your best 3 or 4)
    ★ NEW: you can also just upload certificate files to GitHub, see HOW-TO-ADD.md */
 const CERTIFICATIONS = [
