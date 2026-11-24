@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261123b">
+<link rel="stylesheet" href="style.css?v=20261123c">
 </head>
 <body>
 
@@ -133,6 +133,20 @@
   </section>
 </main>
 
+<div class="modal" id="resumeModal" hidden role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+  <div class="modal-card">
+    <button class="modal-x" id="resumeClose" aria-label="Close">×</button>
+    <span class="modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg></span>
+    <h3 id="resumeTitle">Want my resume?</h3>
+    <p>Message me on LinkedIn or send an email at <b id="resumeEmail">tkpeuly@gmail.com</b> and I'll send it over. Thanks!</p>
+    <div class="modal-btns">
+      <a class="btn btn-solid" id="resumeLinkedin" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+      <a class="btn btn-line" id="resumeMail">Send an email</a>
+    </div>
+    <button class="modal-copy" id="resumeCopy">Copy email address</button>
+  </div>
+</div>
+
 <div class="lightbox" id="lightbox" hidden>
   <button class="lb-close" id="lbClose" aria-label="Close">×</button>
   <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
@@ -150,7 +164,7 @@
   <span>© <span id="year"></span> Tabassum Peuly</span>
 </footer>
 
-<script src="data.js?v=20261123b"></script>
-<script src="script.js?v=20261123b"></script>
+<script src="data.js?v=20261123c"></script>
+<script src="script.js?v=20261123c"></script>
 </body>
 </html>

@@ -10,7 +10,22 @@
   $("grad").textContent = SITE.gradLabel;
   $("intro").textContent = SITE.intro;
   $("photo").src = SITE.photo;
-  document.querySelectorAll(".js-resume").forEach((a) => (a.href = SITE.linkedin));
+  const modal = $("resumeModal");
+  const mailto = `mailto:${SITE.email}?subject=${encodeURIComponent("Resume request")}&body=${encodeURIComponent("Hi Peuly,\n\nI came across your portfolio and would love a copy of your resume.\n\nThanks!")}`;
+  $("resumeEmail").textContent = SITE.email;
+  $("resumeLinkedin").href = SITE.linkedin;
+  $("resumeMail").href = mailto;
+  const openModal = (e) => { e.preventDefault(); modal.hidden = false; document.body.style.overflow = "hidden"; $("resumeClose").focus(); };
+  const closeModal = () => { modal.hidden = true; document.body.style.overflow = ""; };
+  document.querySelectorAll(".js-resume").forEach((a) => { a.removeAttribute("target"); a.addEventListener("click", openModal); });
+  $("resumeClose").addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
+  $("resumeCopy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(SITE.email); $("resumeCopy").textContent = "Copied ✓"; }
+    catch { $("resumeCopy").textContent = SITE.email; }
+    setTimeout(() => ($("resumeCopy").textContent = "Copy email address"), 2000);
+  });
 
   /* ---------- ABOUT ---------- */
   $("aboutHeading").textContent = ABOUT.heading;
