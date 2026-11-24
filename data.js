@@ -307,7 +307,7 @@ const CERTIFICATIONS = [
     date: "Oct 2026",
     credentialId: "izej62swxn",
     file: "",
-    link: "https://www.linkedin.com/in/tabassum-kamal-peuly-841267421/details/certifications/",
+    link: "https://learning.mentorcollective.org/certificates/izej62swxn",
     featured: true,
   },
   {
