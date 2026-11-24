@@ -295,6 +295,17 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* ---------- LINE UP PHOTO FRAME WITH THE NAME ---------- */
+  const alignHero = () => {
+    const fig = document.querySelector(".drawing"), h1 = document.querySelector(".hero-name"), txt = document.querySelector(".hero-text");
+    if (window.innerWidth <= 860) { fig.style.marginTop = ""; return; }
+    const capGap = parseFloat(getComputedStyle(h1).fontSize) * 0.06;
+    fig.style.marginTop = Math.max(0, h1.getBoundingClientRect().top - txt.getBoundingClientRect().top + capGap) + "px";
+  };
+  alignHero();
+  window.addEventListener("resize", alignHero);
+  if (document.fonts) document.fonts.ready.then(alignHero);
+
   /* ---------- HERO GEAR ---------- */
   const makeGear = (c1, c2, teeth, rOut, rRoot, spokes, rA, rB, hub) => {
     const P = (r, t) => (c1 + r * Math.cos(t)).toFixed(2) + " " + (c2 + r * Math.sin(t)).toFixed(2);
