@@ -243,7 +243,7 @@
   $("emailBtn").href = mail; $("fEmail").href = mail;
   $("emailText").textContent = SITE.email;
   $("linkedinBtn").href = SITE.linkedin; $("heroLinkedin").href = SITE.linkedin; $("fLinkedin").href = SITE.linkedin;
-  $("fGithub").href = SITE.github;
+  $("fGithub").href = SITE.github; $("githubBtn").href = SITE.github;
   $("year").textContent = new Date().getFullYear();
 
   /* ---------- MOBILE MENU ---------- */
